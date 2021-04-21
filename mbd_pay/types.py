@@ -38,7 +38,7 @@ class RefundStateEnum(IntEnum):
     full = 2  # 全额退款
 
 
-class WeChatJSAPIReq(BaseModel):
+class WeChatJSApiReq(BaseModel):
     """
     微信JSAPI支付请求参数
     """
@@ -49,7 +49,7 @@ class WeChatJSAPIReq(BaseModel):
     amount_total: int
     out_trade_no: Optional[str]
     callback_url: str
-    sign: str
+    # sign: str
 
 
 class WeChatJSApiRes(BaseModel):
@@ -57,12 +57,14 @@ class WeChatJSApiRes(BaseModel):
     微信JSAPI支付返回参数
     """
 
-    appId: str
-    timeStamp: str
-    nonceStr: str
-    package: str
-    signType: str
-    paySign: str
+    appId: Optional[str]
+    timeStamp: Optional[str]
+    nonceStr: Optional[str]
+    package: Optional[str]
+    signType: Optional[str]
+    paySign: Optional[str]
+    code: Optional[str]
+    message: Optional[str]
     error: Error
 
 
@@ -72,11 +74,11 @@ class WeChatH5Req(BaseModel):
     """
 
     # app_id: str
-    channel: str
+    channel: str = "h5"
     description: str
     amount_total: int
     out_trade_no: Optional[str]
-    sign: str
+    # sign: str
 
 
 class WeChatH5Res(BaseModel):
@@ -84,7 +86,7 @@ class WeChatH5Res(BaseModel):
     微信H5支付返回参数
     """
 
-    h5_url: str
+    h5_url: Optional[str]
     error: Error
 
 
@@ -99,7 +101,7 @@ class AliPayReq(BaseModel):
     amount_total: int
     out_trade_no: Optional[str]
     callback_url: Optional[str]
-    sign: str
+    # sign: str
 
 
 class AliPayRes(BaseModel):
@@ -118,7 +120,7 @@ class RefundReq(BaseModel):
 
     # app_id: str
     order_id: str
-    sign: str
+    # sign: str
 
 
 class RefundRes(BaseModel):
@@ -138,7 +140,7 @@ class SearchOrderReq(BaseModel):
 
     # app_id: str
     out_trade_no: str
-    sign: str
+    # sign: str
 
 
 class SearchOrderRes(BaseModel):

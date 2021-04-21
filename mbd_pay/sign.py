@@ -17,11 +17,12 @@ def sign(attributes: dict, payjs_key: str) -> str:
 
 if __name__ == "__main__":
     # 用法示例
-    data = {"app_id": "12345", "amount_total": 1, "out_trade_no": "123123123123"}
+    data = {"app_id": "194024590982810", "amount_total": 100,"channel": "h5","description": "312"}
 
     # 面包多支付 app_key
-    key = "xxxxxxxxxxx"
+    key = "920ee68b4e16df01d0cd6b2ca161195d"
 
     signed = sign(data, key)
-    assert signed == "8544787ca7f93235a3e6c63b3c14eced"
+    print(signed)
+    # assert signed == "8544787ca7f93235a3e6c63b3c14eced"
     print("ok")

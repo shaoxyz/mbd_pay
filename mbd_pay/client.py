@@ -80,11 +80,7 @@ class Client:
         """
         req = WeChatJSApiReq(**kwargs)
         api = f"{self.domain}/release/wx/prepay"
-
-        try:
-            res = self._post(api, req, **kwargs)
-        except Exception as e:
-            raise e
+        res = self._post(api, req, **kwargs)
 
         return WeChatJSApiRes(**res)
 
@@ -97,11 +93,7 @@ class Client:
         """
         req = WeChatH5Req(**kwargs)
         api = f"{self.domain}/release/wx/prepay"
-
-        try:
-            res = self._post(api, req, **kwargs)
-        except Exception as e:
-            raise e
+        res = self._post(api, req, **kwargs)
 
         return WeChatH5Res(**res)
 
@@ -114,11 +106,7 @@ class Client:
         """
         req = AliPayReq(**kwargs)
         api = f"{self.domain}/release/alipay/pay"
-
-        try:
-            res = self._post(api, req, **kwargs)
-        except Exception as e:
-            raise e
+        res = self._post(api, req, **kwargs)
 
         return AliPayRes(**res)
 
@@ -131,11 +119,7 @@ class Client:
         """
         req = RefundReq(**kwargs)
         api = f"{self.domain}/release/main/refund"
-
-        try:
-            res = self._post(api, req, **kwargs)
-        except Exception as e:
-            raise e
+        res = self._post(api, req, **kwargs)
 
         return RefundRes(**res)
 
@@ -148,11 +132,7 @@ class Client:
         """
         req = SearchOrderReq(**kwargs)
         api = f"{self.domain}/release/main/refund"
-
-        try:
-            res = self._post(api, req, **kwargs)
-        except Exception as e:
-            raise e
+        res = self._post(api, req, **kwargs)
 
         return SearchOrderRes(**res)
 

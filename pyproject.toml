@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mbd_pay"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["shaoxyz <shwb95@163.com>"]
 

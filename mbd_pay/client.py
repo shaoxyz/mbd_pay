@@ -42,7 +42,7 @@ class Client:
         req.update(sign=sign(req, self.app_key))
         return req
 
-    def _post(self, url: str, req, **kwargs):
+    def _post(self, _url: str, req, **kwargs):
         """
         build request body for POST, split out requests' kwargs
         :param url: url
@@ -57,7 +57,7 @@ class Client:
             i: kwargs[i] for i in kwargs.keys() if i not in req.__fields_set__
         }
 
-        return requests.post(url, json=body, **other_kwargs).json()
+        return requests.post(_url, json=body, **other_kwargs).json()
 
     def get_openid_redirect_url(self, **kwargs) -> str:
         """
@@ -120,7 +120,6 @@ class Client:
         req = RefundReq(**kwargs)
         api = f"{self.domain}/release/main/refund"
         res = self._post(api, req, **kwargs)
-
         return RefundRes(**res)
 
     def search_order(self, **kwargs) -> SearchOrderRes:
@@ -131,34 +130,6 @@ class Client:
         :return: SearchOrderRes
         """
         req = SearchOrderReq(**kwargs)
-        api = f"{self.domain}/release/main/refund"
+        api = f"{self.domain}/release/main/search_order"
         res = self._post(api, req, **kwargs)
-
         return SearchOrderRes(**res)
-
-
-if __name__ == "__main__":
-    c = Client(app_id="**", app_key="**")
-    print(
-        "openid_redirect_url: ",
-        c.get_openid_redirect_url(target_url="http://baidu.com"),
-    )
-    print(
-        "jsapi: ",
-        c.wx_jsapi(
-            openid="123",
-            description="312",
-            amount_total=100,
-            callback_url="https://baidu.com",
-            # timeout=5,
-        ),
-    )
-
-    # print(
-    #     "h5: ",
-    #     c.wx_h5(
-    #         description="312",
-    #         amount_total=100,
-    #         # timeout=5,
-    #     ),
-    # )

@@ -109,7 +109,7 @@ class AliPayRes(BaseModel):
     支付宝支付返回参数
     """
 
-    body: str
+    body: Optional[str]
     error: Error
 
 
@@ -128,8 +128,9 @@ class RefundRes(BaseModel):
     退款返回参数
     """
 
-    code: int
-    info: str
+    code: Optional[int]
+    info: Optional[str]
+    message: Optional[str]
     error: Error
 
 
@@ -148,17 +149,18 @@ class SearchOrderRes(BaseModel):
     查询订单返回参数
     """
 
-    order_id: str
-    charge_id: str
-    description: str
-    share_id: str
-    share_state: int
-    amount: int
-    state: OrderStateEnum
-    create_time: int
-    payway: PayWayEnum
-    refund_state: RefundStateEnum
-    plusinfo: str
+    order_id: Optional[str]
+    charge_id: Optional[str]
+    description: Optional[str]
+    share_id: Optional[str]
+    share_state: Optional[int]
+    amount: Optional[int]
+    state: Optional[OrderStateEnum]
+    create_time: Optional[int]
+    payway: Optional[PayWayEnum]
+    refund_state: Optional[RefundStateEnum]
+    plusinfo: Optional[str]
+    error: Error
 
 
 class WebHookChargeSucceeded(BaseModel):

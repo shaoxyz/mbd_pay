@@ -1,8 +1,17 @@
 [tool.poetry]
 name = "mbd_pay"
-version = "0.1.2"
+version = "0.1.4"
+license = "MIT"
+readme = "README.md"
 description = "面包多支付SDK - https://mbd.pub/"
 authors = ["shaoxyz <shwb95@163.com>"]
+homepage = "https://github.com/shaoxyz/mbd_pay"
+repository = "https://github.com/shaoxyz/mbd_pay"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@Time    : 2021/4/18 16:26
+@Time    : 2023/6/11 21:17
 @Author  : github.com/shaoxyz
 """
 import urllib.parse
@@ -27,7 +27,7 @@ class Client:
     面包多支付客户端
     """
 
-    def __init__(self, app_id: str, app_key: str, domain="https://api.mianbaoduo.com"):
+    def __init__(self, app_id: str, app_key: str, domain="https://api.niucodata.com"):
 
         self.app_id = app_id
         self.app_key = app_key

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mbd_pay"
-version = "0.1.4"
+version = "0.1.5"
 license = "MIT"
 readme = "README.md"
 description = "面包多支付SDK - https://mbd.pub/"

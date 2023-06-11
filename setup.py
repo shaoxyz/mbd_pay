@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
   name="mbd_pay",
-  version="0.1.4",
+  version="0.1.5",
   author="shaoxyz",
   author_email="shwb95@163.com",
   description="面包多支付SDK - https://mbd.pub/",
